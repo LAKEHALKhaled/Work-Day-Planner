@@ -7,13 +7,10 @@
 
 $('.saveBtn').on("click",function() {
     var text = $(this).siblings('.description').val()
-    var time = $(this).siblings('.hour').text()
-    var textItem = JSON.parse(localStorage.getItem("textItem"))  || []
-    localStorage.setItem("hour-1",JSON.stringify(textItem))
-    var note = {text,time}
-    var notes = JSON.parse(localStorage.getItem("notes"))  || []
-    notes.push(note)
-     localStorage.setItem("notes",JSON.stringify(notes))
+    var time = $(this).parent().attr('id');
+    localStorage.setItem(time, text);
+    // notes.push(note)
+    //  localStorage.setItem("notes",JSON.stringify(notes))
      
 })
 
@@ -55,42 +52,18 @@ timeColor()
 
 
 
-// console.log($("#hour-12"));
-//  function dispayData(){
+
     
-    console.log(notes);
-    for(let i=0;i<9;i++){
-       
-    var notes = JSON.parse(localStorage.getItem("notes")) || []
-        //  console.log(notes[i]);
-        
-        // console.log(hourId);
-        
-        
-    }
+    
+    for(let i=9;i<18;i++){
+
     var hour = "hour-"
-    var hourId = hour.concat(9) 
+    var hourId = hour.concat(i) 
     var myId = $("#" + hourId)
         
     console.log(myId);
-    myId.children().eq(1).val(localStorage.getItem("textItem"));
-//         console.log(myId);
-//          var note = notes[i].text
-//          console.log(note);
-//         //  console.log(notes[i].text );
-//         //  console.log(note);
-//     //      console.log(note);
-//     // //     console.log(notes);
-//     // //    .val(notes[0][0]) 
+    myId.children().eq(1).val(localStorage.getItem("hour-"+i));
+    }
     
-//     console.log();
-//     if(myId === "hour-9" ){
-//         // $("#"+myId).children(".description").val(note) = notes[i].text
-//         console.log(myId[i]);
-//         console.log("hello")
-//     }
-    
-//   }
-//  }
-// dispayData()
+
   
