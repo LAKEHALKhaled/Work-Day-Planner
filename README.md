@@ -9,3 +9,5 @@ WHEN we click into a timeblock we can enter an event
 WHEN we click the save button for that timeblock the text for that event is saved in local storage
 WHEN we refresh the page the saved events persist
  
+  # link to webpage : 
+  https://lakehalkhaled.github.io/Work-Day-Planner/
